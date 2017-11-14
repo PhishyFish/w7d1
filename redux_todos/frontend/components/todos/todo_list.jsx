@@ -3,12 +3,12 @@ import { allTodos } from '../../reducers/selectors';
 import TodoListItem from './todo_list_item';
 import TodoForm from './todo_form';
 
-const TodoList = ({ todos, receiveTodo }) => (
+const TodoList = ({ todos, receiveTodo, removeTodo }) => (
   <div>
     <ul>
       {
       todos.map((todo, i) => (
-          <TodoListItem key={i} title={todo.title} />
+          <TodoListItem key={i} todo={todo} removeTodo={removeTodo} receiveTodo={receiveTodo} />
         ))
       }
     </ul>
